@@ -3,8 +3,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import appConfig from "../config.json";
 
-const dadosDoSupabase = 
-
 function Titulo(props) {
     const Tag = props.tag || "h1";
     return (
@@ -21,20 +19,8 @@ function Titulo(props) {
     );
 }
 
-// //Componenente React
-// function HomePage() {
-//   //JSX
-//   return (
-//     <div>
-//       <GlobalStyle />
-//       <Title tag="h2">Boas vindas de volta!</Title>
-//       <h2>Discord - Alura Matrix</h2>
-//     </div>/
-//   );
-// }
-// export default HomePage
-
 export default function PaginaInicial() {
+    // const username = 'Palhares17';
     const [username, setUsername] = React.useState("");
     const roteamento = useRouter();
 
@@ -76,7 +62,7 @@ export default function PaginaInicial() {
                         as="form"
                         onSubmit={function (infosDoEvento) {
                             infosDoEvento.preventDefault();
-                            // console.log("Alguém submeteu o form");
+                            console.log("Alguém submeteu o form");
                             roteamento.push("/chat");
                             // window.location.href = '/chat';
                         }}
@@ -101,6 +87,18 @@ export default function PaginaInicial() {
                             {appConfig.name}
                         </Text>
 
+                        {/* <input
+                            type="text"
+                            value={username}
+                            onChange={function (event) {
+                                console.log('usuario digitou', event.target.value);
+                                // Onde ta o valor?
+                                const valor = event.target.value;
+                                // Trocar o valor da variavel
+                                // através do React e avise quem precisa
+                                setUsername(valor);
+                            }}
+                        /> */}
                         <TextField
                             value={username}
                             onChange={function (event) {
